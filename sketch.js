@@ -22,7 +22,7 @@ let numBugs = 40;
 
 let flag = 'down';
 
-let joke = ['Vrooooom', 'Speed = Fun, Slow = Bad', 'If you crash get back up, if you die walk it off', 'I disconnected my brakes, its about speeding up not slowing down!', 'Two wheels are always better than four', 'Race day is coming', 'Theres no stopping this Race Day will arrive', 'Drive or Die, thats the only way to live', 'Two Wheels, Full Tank, Lets fucking go', "It's nearly fucking race day", 'Fast and Furious has nothing on MotoGP', 'They say the flash is jealous of Marc Marquez', 'Quartararo gonna fuck these boys up', 'If its speed you want, its speed you will get', 'You must become speed!', 'Be the speed you want to see', 'Your fastest is not fast enough', 'So fast you outpace lightning', 'Create more track friction through shear power of will!', 'Death is just another day when you ride!', "You can not restrict me to 4 wheels", 'Riding anything but a motorbike is like walking without legs', "If you don't believe bikes are better, you're wrong", 'Zooooooom', "You can't handle the speed!", 'Broooooom', 'Car goes toot toot, Bike goes vroom vroom']
+let joke = ['Vrooooom', 'Speed = Fun, Slow = Bad', 'If you crash get back up, if you die walk it off', 'I disconnected my brakes, its about speeding up not slowing down!', 'Two wheels are always better than four', 'Race day is coming', 'Theres no stopping this Race Day will arrive', 'Drive or Die, thats the only way to live', 'Two Wheels, Full Tank, Lets fucking go', "It's nearly fucking race day", 'Fast and Furious has nothing on MotoGP', 'They say the flash is jealous of Marc Marquez', 'Quartararo gonna fuck these boys up', 'If its speed you want, its speed you will get', 'You must become speed!', 'Be the speed you want to see', 'Your fastest is not fast enough', 'So fast you outpace lightning', 'Create more track friction through shear power of will!', 'Death is just another day when you ride!', "You can not restrict me to 4 wheels", 'Riding anything but a motorbike is like walking without legs', "If you don't believe bikes are better, you're wrong", 'Zooooooom', "You can't handle the speed!", 'Broooooom', 'Car goes toot toot, Bike goes vroom vroom', 'So fast your blood is high octane power!', 'Lightspeed is only a limit for some', 'The throttle should only have two settings, off and max speed', 'Here we go its almost RACE DAY!!!']
 
 let raceDate = [['9','7','10'], ['16','7','10'], ['23','7','10'], ['13','8','10'], ['20','8','10'], ['27','8','10'], ['11','9','11'], ['18','9','11'], ['25','9','12'], ['8','10','12'], ['25','10','12']
 ] //Dates stored [day, month] remember month is zero indexed for some reason. Also in order nearest to furthest.
@@ -48,8 +48,8 @@ function drawMain(DaysCounter, HoursCounter, MinutesCounter, SecondsCounter){
         fill(0);
         textSize(width*0.03);
         text(DaysCounter + ' Days  ' + HoursCounter + ' Hours  ' + MinutesCounter + ' Minutes  ' + SecondsCounter + ' Seconds', width*0.10, height*0.45);
-        textSize(width*0.015);
-        text(joke[rndJoke], width*0.10, height*0.6);
+        textSize(width*0.018);
+        text(joke[rndJoke], width*0.10, height*0.58);
         
         
 }
