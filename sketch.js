@@ -13,7 +13,6 @@ let trackMarkings = [];
 
 //Bike Movement
 let bikeY;
-let bikeAcceleration = 0;
 
 //Fire
 
@@ -58,7 +57,7 @@ function road(){
 }
 
 function mousePressed() {
-    if(mouseX > width*0.6 && mouseX < width*0.6 + width*0.3 && mouseY > bikeY && mouseY < bikeY + (width*0.3)/2){
+    if(mouseX > width*0.6 && mouseX < width*0.55 + width*0.3 && mouseY > bikeY && mouseY < bikeY + (width*0.3)/2){
     if (song.isPlaying()) {
       // .isPlaying() returns a boolean
       song.stop();
@@ -94,7 +93,7 @@ function setup() {
         lastMarkerPos += 240;
     }
 
-    bikeY = (height - height*0.75)/2 + height*0.4;
+    bikeY = height*0.6;
     
 }
 
@@ -155,13 +154,13 @@ function draw() {
         }
 
         //Bike Logic
-        if(bikeY < height*0.62 && flag == 'down'){
+        if(bikeY < height*0.65 && flag == 'down'){
             bikeY += 0.3;
         } else {
             flag = 'up'
         }
 
-        if(bikeY > height*0.52 && flag == 'up'){
+        if(bikeY > height*0.55 && flag == 'up'){
             bikeY -= 0.3;
         } else {
             flag = 'down'
@@ -169,7 +168,7 @@ function draw() {
     
     }
     
-    image(img, width*0.6, bikeY, width*0.35, (width*0.35)/2);
+    image(img, width*0.6, bikeY, 400, 200);
 
 
     //Counter and Words
@@ -198,7 +197,7 @@ function draw() {
 
         // make more fire!!!
         let x = width*0.6;
-        let y = bikeY + 100;
+        let y = bikeY + 80;
         let radius = random(30,50);
         let b = new Bug(x, y, radius);
         bugs.push(b);
