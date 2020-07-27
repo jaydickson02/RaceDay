@@ -14,6 +14,7 @@ let trackMarkings = [];
 //Bike Movement
 let bikeY;
 
+let songIsLooping = false;
 //Fire
 
 let bugs = [];
@@ -60,11 +61,12 @@ function road(){
 
 function mousePressed() {
     if(mouseX > width*0.6 && mouseX < width*0.55 + width*0.3 && mouseY > bikeY && mouseY < bikeY + (width*0.3)/2){
-    if (song.isPlaying()) {
-      // .isPlaying() returns a boolean
+    if (songIsLooping) {
       song.stop();
+      songIsLooping = false;
     } else {
-      song.play();
+      song.loop();
+      songIsLooping = true;
     }
 
     if(fireState == 'off'){
