@@ -23,7 +23,7 @@ let flag = 'down';
 
 let joke = ['Vrooooom', 'Speed = Fun', 'If you crash get back up, if you die walk it off', 'I disconnected my brakes, its about speeding up not slowing down!', 'Two wheels are always better than four', 'Race day is coming', 'Theres no stopping this Race Day will arrive', 'Drive or Die, thats the only way to live', 'Two Wheels, Full Tank, Lets fucking go', "It's nearly fucking race day", 'Fast and Furious has nothing on MotoGP', 'They say the flash is jealous of Marc Marquez', 'Quartararo gonna fuck these boys up', 'If its speed you want, its speed you will get', 'You must become speed!', 'Be the speed you want to see', 'Your fastest is not fast enough', 'So fast you outpace lighning', 'You can create more track friction through shear power of will!' ]
 
-let raceDate = [['9','7'], ['16','7'], ['23','7'], ['13','8'], ['20','8'], ['27','8'], ['11','9'], ['18','9'], ['25','9'], ['8','10'], ['25','10']
+let raceDate = [['9','7','10'], ['16','7','10'], ['23','7','10'], ['13','8','10'], ['20','8','10'], ['27','8','10'], ['11','9','11'], ['18','9','11'], ['25','9','12'], ['8','10','12'], ['25','10','12']
 ] //Dates stored [day, month] remember month is zero indexed for some reason. Also in order nearest to furthest.
 
 let raceName = ['Czech GP', 'Austrian GP', 'Styrian GP', 'San Marino GP', 'Emilia Romagna GP', 'Catalan GP', 'French GP', 'Aragon GP', 'Teruel GP', 'Europe GP', 'Valencia GP']
@@ -40,8 +40,10 @@ function preload() {
 function drawMain(DaysCounter, HoursCounter, MinutesCounter, SecondsCounter){
         stroke(0)
         fill(0);
+        textStyle(ITALIC);
         textSize(width*0.04);
         text(racesToComeNames[0], width*0.10, height*0.3);
+        textStyle(NORMAL);
         fill(0);
         textSize(width*0.03);
         text(DaysCounter + ' Days  ' + HoursCounter + ' Hours  ' + MinutesCounter + ' Minutes  ' + SecondsCounter + ' Seconds', width*0.10, height*0.45);
@@ -52,8 +54,8 @@ function drawMain(DaysCounter, HoursCounter, MinutesCounter, SecondsCounter){
 }
 
 function road(){
-    fill(50);
-    rect(-10, height*0.75, width + 10, height - height*0.75);
+    fill(20);
+    rect(-10, height*0.72, width + 10, height - height*0.72);
 }
 
 function mousePressed() {
@@ -89,7 +91,7 @@ function setup() {
     rndJoke = Math.floor(Math.random() * joke.length);
     let lastMarkerPos = 0;
     for(let i=0; i< width/240; i++){
-        trackMarkings.push(new trackMarking(width - lastMarkerPos, height*0.75, height - height*0.75));
+        trackMarkings.push(new trackMarking(width - lastMarkerPos, height*0.72, height - height*0.72));
         lastMarkerPos += 240;
     }
 
@@ -121,7 +123,7 @@ function draw() {
     currentDate = new Date();
 
     
-    let nearestRaceTime = new Date('2020', nearestRace[1], nearestRace[0]).getTime();
+    let nearestRaceTime = new Date('2020', nearestRace[1], nearestRace[0], nearestRace[2]).getTime();
     let time = currentDate.getTime();
 
     let TimeDifference = nearestRaceTime - time;

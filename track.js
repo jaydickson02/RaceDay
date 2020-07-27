@@ -10,7 +10,7 @@ class trackMarking{
     draw(){
         stroke(255);
         fill(255);
-        rect(this.x, this.y, 60, 5);
+        rect(this.x - 50, this.y, 60, 5);
     }
 
     move(){
